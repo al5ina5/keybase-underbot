@@ -19,11 +19,8 @@ async function main() {
     console.log('Starting Keybase bot....')
     const bot = new Bot()
 
-    const keybaseUsername = 'underbot'
-    const keybasePaperKey = 'imitate pull else ecology inform pair radio volume increase marine thumb uphold shock'
-
     loadCommands()
-    await bot.init(keybaseUsername, keybasePaperKey)
+    await bot.init(settings.keybase.username, settings.keybase.paperkey)
     console.log(`Connection with Keybase established as ${bot.myInfo().username}.`)
     console.log(`Commands Loaded: ${Object.keys(core.commands).join(', ')}`)
 
