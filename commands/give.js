@@ -21,7 +21,7 @@ exports.run = (message, bot, args) => {
     }
 
     core.getBalance(message.sender.username, (balance) => {
-        if (amount > balance) {
+        if (1 < amount > balance) {
             bot.chat.send(message.channel, {body: `You can't give @${message.atMentionUsernames[0]} *$${amount}* because you don't even have $${amount}.`})
             return
         } else {

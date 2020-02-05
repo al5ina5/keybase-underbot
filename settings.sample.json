@@ -1,9 +1,9 @@
 {
     "database": {
         "host": "localhost",
-        "user": "keybot",
-        "database": "keybot",
-        "password": "851V2V93OyA8HF6t"
+        "user": "",
+        "database": "",
+        "password": ""
     },
     "prefix": "+",
     "actions": {

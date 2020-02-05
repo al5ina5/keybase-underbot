@@ -1,12 +1,13 @@
 const mysql = require('mysql')
+const settings = require('./settings.json')
 
 exports.commands = {}
 
 var database = mysql.createConnection({
-    host: 'localhost',
-    user: 'keybot',
-    database: 'keybot',
-    password: 'nedYXBbXAXEXEqV0'
+    host: settings.database.host,
+    user: settings.database.user,
+    database: settings.database.database,
+    password: settings.database.password
 })
 
 database.connect(function(err) {
