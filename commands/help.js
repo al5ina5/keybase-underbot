@@ -3,6 +3,11 @@ const settings = require('../settings.json')
 
 exports.run = (message, bot, args) => {
 
+    if (!args[1]) {
+        bot.chat.send(message.channel, {body: `Use \`${settings.prefix}commands\` for a list of commands. Use \`${settings.prefix}help <command>\` to get more information on a command. Visit the GitHub page for more information: https://github.com/al5ina5/keybase-underbot`})
+        return
+    }
+
     var command = args[1]
 
     if (command.includes(settings.prefix)) {

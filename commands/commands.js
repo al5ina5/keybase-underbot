@@ -7,7 +7,7 @@ exports.run = (message, bot) => {
         commandList.push(`> *${settings.prefix}${command}* - ${core.commands[command].help}`)
     }
 
-    bot.chat.send(message.channel, {body: `*Commands* \r\n ${commandList.join('\r\n')}`})
+    bot.chat.send(message.channel, {body: `*Commands* \r\n ${commandList.join('\r\n')} \r\n  More: http://github.com/al5ina5/keybase-underbot`})
 }
 
 exports.help = 'Get a list of commands.'

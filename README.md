@@ -11,6 +11,7 @@ The goal of the 'game' is to become the richest and most proflic member in the U
 - `+commands` - Get a list of commands.
 - `+crime` - Commit a crime to gain some money.
 - `+give` - Give money to your friends or foes.
+- `+heist` - Go on heist—at your own risk.
 - `+help` - Get detailed information on a command.
 - `+leaderboard` - View the leaderboard.
 - `+rob` - Take money from your friends or foes.

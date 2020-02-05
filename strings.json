@@ -38,5 +38,15 @@
             "6": "The county fines you for being a prick.",
             "7": "You pulled off the mission but you were ticketed for speeding home on your way back."
         }
+    },
+    "heist": {
+        "win": {
+            "0": "Another successful heist for the books. You're rich!",
+            "1": "That was easier than expected."
+        },
+        "fail": {
+            "0": "That disguise couldn't have been more silly.",
+            "1": "You should probably never do that again."
+        }
     }
 }

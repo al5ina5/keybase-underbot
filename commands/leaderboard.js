@@ -10,12 +10,10 @@ exports.run = (message, bot) => {
         var num = 0
         results.forEach(player => {
             num++
-            leaderboard.push(`> ${num}. **$${player.balance}**: ${player.user}`)
-        });
+            leaderboard.push(`${num}. $${player.balance}: ${player.user}`)
+        })
 
-        bot.chat.send(message.channel, {body: `**Leaderboard** \r\n ${leaderboard.join('\r\n')}`})
-        
-        console.log(results)
+        bot.chat.send(message.channel, {body: `*Leaderboard* \`\`\`${leaderboard.join('\r\n')}\`\`\``})
     })
 }
 
