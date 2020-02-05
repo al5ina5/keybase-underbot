@@ -16,7 +16,7 @@ function loadCommands() {
 }
 
 async function main() {
-    console.log('Starting Keybase bot...')
+    console.log('Starting Keybase bot....')
     const bot = new Bot()
 
     const keybaseUsername = 'underbot'
