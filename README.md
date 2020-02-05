@@ -17,7 +17,7 @@ The goal of the 'game' is to become the richest and most proflic member in the U
 - +test - This is a test command used for development purposes.
 - +work - Do some honest work and gain some money.
 
-# [Changelog](https://github.com/al5ina5/keybase-underbot/blob/master/CHANGELOG.md)
-
 # Planned Features
 - Blah!
+
+# [Changelog](https://github.com/al5ina5/keybase-underbot/blob/master/CHANGELOG.md)
