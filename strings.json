@@ -1,0 +1,42 @@
+{
+    "work": {
+        "win": {
+            "0": "Honest work is the best work!",
+            "1": "Your client tipped you good.",
+            "2": "You spend the afternoon mowing lawns.",
+            "3": "Outstanding! You've been promoted to head janitor for your performance.",
+            "4": "Another day, another dollar!",
+            "5": "It's an icy day, which means there's work to do all over the city."
+        },
+        "fail": {
+            "0": "You had a really bad day today.",
+            "1": "Don't you just hate when they don't tip?",
+            "2": "How could you be this unlucky?",
+            "3": "Uh... you're not supposed to lose money when you work.",
+            "4": "I think it's time to get a new job.",
+            "5": "Your d*ckhead of a boss is gonna get it one day.",
+            "6": "You showed up to work only to be fined for forgetting your badge at home."
+        }
+    },
+    "crime": {
+        "win": {
+            "0": "The bank is not happy with you for what you did.",
+            "1": "Scamming online has flipped a profit.",
+            "2": "Immoral money is good money... this time.",
+            "3": "You've reached a new low with this one.",
+            "4": "You didn't get high on your own supply.",
+            "5": "You thief. Why would you rob an old woman for her hard earned money?",
+            "6": "Let's hope this fast money works out for you."
+        },
+        "fail": {
+            "0": "You should've made sure your getaway car was in order.",
+            "1": "A criminal always gets caught.",
+            "2": "Now you're headed straight to county.",
+            "3": "The police laugh at you for being an idiot.",
+            "4": "Wasn't the smarest idea, was it?",
+            "5": "Maybe you'll finally learn your lesson.",
+            "6": "The county fines you for being a prick.",
+            "7": "You pulled off the mission but you were ticketed for speeding home on your way back."
+        }
+    }
+}

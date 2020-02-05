@@ -1,0 +1,21 @@
+{
+  "name": "keybase-underbot",
+  "version": "1.0.0",
+  "description": "Keybase's coolest robot.",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "keybase",
+    "game"
+  ],
+  "author": "Sebastian Alsina",
+  "license": "MIT",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "keybase-bot": "^3.4.0",
+    "mysql": "^2.18.1",
+    "random-number": "0.0.9"
+  }
+}
