@@ -11,7 +11,7 @@ var timeout
 var players = []
 var reward
 
-var timer = 60000
+var timer = 30000
 var playervalue = rn({min: 0.01, max: 0.2})
 
 exports.run = (message, bot) => {
@@ -29,30 +29,30 @@ exports.run = (message, bot) => {
             if(rand < winrate) {
                 reward = rn({min: settings.actions.heist.minwin, max: settings.actions.heist.maxwin, integer: true})
 
-                bot.chat.send(message.channel, {body: `The heist was *won*. ${players.join(', ')} ran off with *$${reward}* each!`})
+                bot.chat.send(message.channel, {body: `The heist was *won*. @${players.join(', @')} ran off with *$${reward}* each!`})
             } else {
                 reward = rn({min: settings.actions.heist.maxloss, max: settings.actions.heist.minloss, integer: true})
 
-                bot.chat.send(message.channel, {body: `*#%$&!* The heist was breached by police. All participants were caught and fined *$${reward}*.`})
+                bot.chat.send(message.channel, {body: `*F%$K!* The heist was breached by police. All participants were caught and fined *$${Math.abs(reward)}*.`})
             }
 
             for (var player in players) {
                 console.log(players[player] + 'won')
-                // core.createLedgerEntry(player, reward, `successful heist with ${players.join(', ')}`)
+                core.createLedgerEntry(players[player], reward, reward > 0 ? actionName : `${actionName}-fail`, `heist with ${players.join(', ')}`)
             }
 
             inGame = false
         }, timer)
     } else {
         if (players.includes(message.sender.username)) {
-            bot.chat.send(message.channel, {body: `@${message.sender.username} is already a part of the current heist. Heist members: ${players.join(', ')}.`})
+            bot.chat.send(message.channel, {body: `@${message.sender.username} is already a part of the current heist. Heisters: ${players.join(', ')}.`})
             return
         }
 
         timeout.refresh()
         winrate += playervalue
         players.push(message.sender.username)
-        bot.chat.send(message.channel, {body: `@${message.sender.username} joined the heist. *Win-rate increased to ${parseInt(winrate * 100)}%. Timer reset to ${timer / 1000} seconds. Heist members: ${players.join(', ')}.`})
+        bot.chat.send(message.channel, {body: `@${message.sender.username} joined the heist. *Win-rate increased to ${parseInt(winrate * 100)}%. Timer reset to ${timer / 1000} seconds. Heisters: ${players.join(', ')}.`})
     }
 }
 
