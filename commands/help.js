@@ -14,11 +14,7 @@ exports.run = (message, bot, args) => {
         command = command.split(settings.prefix)[1]
     }
 
-    console.log(command)
-    
     if (core.commands[command]) {
-        console.log('exists')
-
         var send = []
         send.push(`*${settings.prefix}${command}*`)
         send.push(`> ${core.commands[command].help}`)

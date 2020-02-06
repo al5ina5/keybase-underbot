@@ -25,12 +25,18 @@ async function main() {
     console.log(`Commands Loaded: ${Object.keys(core.commands).join(', ')}`)
 
     const onMessage = message => {
+
         var cmd = message.content.text.body.toLowerCase().trim()
         var args = cmd.split(' ')
 
         if (!cmd.startsWith(settings.prefix)) return
 
-        console.log(`${message.sender.username} ran a command: ${cmd}`)
+        if (message.channel.name != 'underforums' || message.channel.topicName != 'gameroom') {
+            bot.chat.send(message.channel, {body: '*Hey!* I only work in @underforums for now. Join @underforums#gameroom to play!'})
+            return
+        }
+
+        console.log(`${message.sender.username}: ${cmd}`)
         for (const command in core.commands) {
             if (cmd.startsWith(settings.prefix + command) || cmd.startsWith(settings.prefix + core.commands[command].alias)) {
                 core.commands[command].run(message, bot, args)

@@ -22,7 +22,7 @@ exports.createLedgerEntry = (user, amount, type, notes) => {
     database.query(query, [user, amount, type, notes, Date.now()], (err, results, fields) => {
         if (err) console.log(err)
 
-        console.log('Entry created.')
+        console.log(`Ledger record added: ${user}, ${amount}, ${type}, ${notes}`)
     })
 }
 

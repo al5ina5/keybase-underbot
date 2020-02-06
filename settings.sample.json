@@ -12,8 +12,8 @@
     "prefix": "+",
     "actions": {
         "work": {
-            "rate": 0.9,
-            "cooldown": 60,
+            "rate": 0.85,
+            "cooldown": 120,
             "minwin": 30,
             "maxwin": 60,
             "minloss": -3,
@@ -50,6 +50,12 @@
             "maxwin": 1100,
             "minloss": -200,
             "maxloss": -500
+        },
+        "decode": {
+            "minwin": 30,
+            "maxwin": 500,
+            "minloss": -8,
+            "maxloss": -50
         }
     }
 }

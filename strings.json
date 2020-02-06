@@ -46,7 +46,7 @@
         },
         "fail": {
             "0": "You were not powerful enough from the beginning.",
-            "1": "If you want to stay sage, you should probably never do that again."
+            "1": "If you want to stay safe, you should probably never do that again."
         }
     },
     "heist": {
@@ -56,7 +56,7 @@
         },
         "fail": {
             "0": "You were not powerful enough from the beginning.",
-            "1": "If you want to stay sage, you should probably never do that again."
+            "1": "If you want to stay safe, you should probably never do that again."
         }
     }
 }

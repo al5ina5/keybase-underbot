@@ -10,12 +10,13 @@ The goal of the 'game' is to become the richest and most proflic member in the U
 - `+balance` - Check your balance.
 - `+commands` - Get a list of commands.
 - `+crime` - Commit a crime to gain some money.
+- `+decode` - Use a number between 1 and 10 to decode successfully and win (big?) but risk zapping yourself in the process.
 - `+give` - Give money to your friends or foes.
-- `+heist` - Go on heist—at your own risk.
+- `+heist` - Go on a collaborative heist. The more members the join the heist, the higher the chances of winning. Heisters have 60 seconds to join. Each joinee resets the clock to 60 allowing for more time to hesiters to join. Coordinate with your fellow players are pay the cost of immorality if you are caught by police.
 - `+help` - Get detailed information on a command.
 - `+leaderboard` - View the leaderboard.
+- `+quest` - Go on quest. High rewards. High stakes.
 - `+rob` - Take money from your friends or foes.
-- `+test` - This is a test command used for development purposes.
 - `+work` - Do some honest work and gain some money.
 
 # Planned Features
