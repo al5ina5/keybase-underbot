@@ -1,7 +1,10 @@
 # keybase-underbot
  
 UNDERBOT is Keybase's coolest bot. Powered by http://underforums.com.
-```Please feel free to explore the source of this project freely for learning purposes, but please do not replicate and/or distubute this as your own.```
+
+```
+Please feel free to explore the source of this project freely for learning purposes, but please do not replicate and/or distubute this as your own.
+```
 
 # Gameplay
 The goal of the 'game' is to become the richest and most proflic member in the UNDERVERSE. Use a multitude of commands to generate and income or topple your oppenents. The quicket route to riches is your choice to decide: run the risks or keep a steady, honorable income. The bot promotes user activity in any server in an engaging and competitive way.
