@@ -8,7 +8,7 @@ var commands = {}
 function loadCommands() {
     fs.readdir('./commands/', (err, files) => {
         files.forEach(file => {
-            console.log(`Loading ${file}...`)
+            // console.log(`Loading ${file}...`)
             var prop = require(`./commands/${file}`)
             core.commands[file.split('.')[0]] = prop
         })
@@ -32,7 +32,7 @@ async function main() {
         if (!cmd.startsWith(settings.prefix)) return
 
         if (message.channel.name != 'underforums' || message.channel.topicName != 'gameroom') {
-            bot.chat.send(message.channel, {body: '*Hey!* I only work in @underforums for now. Join @underforums#gameroom to play!'})
+            bot.chat.send(message.channel, {body: `*Hey @${message.sender.username}!* I only work in @underforums for now. Join @underforums#gameroom to play!`})
             return
         }
 

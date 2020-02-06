@@ -23,6 +23,10 @@ The goal of the 'game' is to become the richest and most proflic member in the U
 - `+work` - Do some honest work and gain some money.
 
 # Planned Features
-- Implement support for XLM transactions for alternate currency with support for cool things like
+- Add more income actions.
+- Add more collaborative.
+- Add a `+shop` to spend your money on. 
+- Add level/exp tracking aside from the income to create a activity-based leaderboard.
+- Create anti-bot measures to avoid exploiters.
 
 ## [Changelog](https://github.com/al5ina5/keybase-underbot/blob/master/CHANGELOG.md)
