@@ -20,6 +20,6 @@ The goal of the 'game' is to become the richest and most proflic member in the U
 - `+work` - Do some honest work and gain some money.
 
 # Planned Features
-- Implement support for XLM transactions for alternate currency with support for cool things like 
+- Implement support for XLM transactions for alternate currency with support for cool things like
 
-# [Changelog](https://github.com/al5ina5/keybase-underbot/blob/master/CHANGELOG.md)
+## [Changelog](https://github.com/al5ina5/keybase-underbot/blob/master/CHANGELOG.md)
