@@ -1,6 +1,6 @@
 # keybase-underbot
  
-UNDERBOT is Keybase's coolest bot. Powered by http://underforums.com.
+UNDERBOT is Keybase's coolest bot. Powered by http://underforums.com. Join us at `@underforums#gameroom` to play!
 
 ```
 Please feel free to explore the source of this project freely for learning purposes, but please do not replicate and/or distubute this as your own.
