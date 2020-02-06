@@ -33,8 +33,8 @@ exports.run = (message, bot, args) => {
                         core.createLedgerEntry(message.sender.username, amount, 'rob')
                         core.createLedgerEntry(message.atMentionUsernames[0], -Math.abs(amount), 'robbed')
                     } else {
-                        bot.chat.send(message.channel, {body: `You got caught stealing from ${message.atMentionUsernames[0]} and were fined $${Math.abs(amount)}.`})
-                        core.createLedgerEntry(message.sender.username, amount, 'rob')
+                        bot.chat.send(message.channel, {body: `You got caught stealing from @${message.atMentionUsernames[0]} and were fined $${Math.abs(amount)}.`})
+                        core.createLedgerEntry(message.sender.username, amount, 'fined')
                     }
                 }
             })

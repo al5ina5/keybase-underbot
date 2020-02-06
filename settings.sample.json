@@ -14,7 +14,7 @@
         "work": {
             "rate": 0.9,
             "cooldown": 60,
-            "minwin": 10,
+            "minwin": 30,
             "maxwin": 60,
             "minloss": -3,
             "maxloss": -10
@@ -27,13 +27,29 @@
             "minloss": -10,
             "maxloss": -40
         },
+        "quest": {
+            "rate": 0.6,
+            "cooldown": 360,
+            "minwin": 200,
+            "maxwin": 6000,
+            "minloss": -100,
+            "maxloss": -250
+        },
         "rob": {
             "rate": 0.8,
-            "cooldown": 900,
+            "cooldown": 600,
             "minwin": 30,
-            "maxwin": 60,
-            "minloss": -30,
-            "maxloss": -80
+            "maxwin": 100,
+            "minloss": -100,
+            "maxloss": -200
+        },
+        "heist": {
+            "rate": 0.0,
+            "cooldown": 600,
+            "minwin": 600,
+            "maxwin": 1100,
+            "minloss": -200,
+            "maxloss": -500
         }
     }
 }

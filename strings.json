@@ -39,14 +39,24 @@
             "7": "You pulled off the mission but you were ticketed for speeding home on your way back."
         }
     },
-    "heist": {
+    "quest": {
         "win": {
-            "0": "Another successful heist for the books. You're rich!",
-            "1": "That was easier than expected."
+            "0": "The firey dragon has been defeated—once and for all!",
+            "1": "Now you've got your own Shrek-esque story."
         },
         "fail": {
-            "0": "That disguise couldn't have been more silly.",
-            "1": "You should probably never do that again."
+            "0": "You were not powerful enough from the beginning.",
+            "1": "If you want to stay sage, you should probably never do that again."
+        }
+    },
+    "heist": {
+        "win": {
+            "0": "The firey dragon has been defeated—once and for all!",
+            "1": "Now you've got your own Shrek-esque story."
+        },
+        "fail": {
+            "0": "You were not powerful enough from the beginning.",
+            "1": "If you want to stay sage, you should probably never do that again."
         }
     }
 }
