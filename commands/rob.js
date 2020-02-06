@@ -22,20 +22,33 @@ exports.run = (message, bot, args) => {
         
                     core.createLedgerEntry(message.sender.username, amount, 'fined')
                 } else {
+                    var percentage = rn({min: 0.01, max: 0.05})
+                    var amount = parseInt(balance * percentage)
+
                     if (Math.random() < settings.actions[actionName].rate) {
-                        var amount = rn({min: settings.actions[actionName].minwin, max: settings.actions[actionName].maxwin, integer: true})
+
+                        bot.chat.send(message.channel, {body: `Oh no! @${message.sender.username} just robbed @${message.atMentionUsernames[0]} for *$${amount} (${percentage * 100}%)*.`})
+                        
+                        core.createLedgerEntry(message.sender.username, amount, actionName)
+                        core.createLedgerEntry(message.atMentionUsernames[0], -Math.abs(amount), 'robbed')
+                        
+                        // var amount = rn({min: settings.actions[actionName].minwin, max: settings.actions[actionName].maxwin, integer: true})
                     } else {
-                        var amount = rn({min: settings.actions[actionName].maxloss, max: settings.actions[actionName].minloss, integer: true})
+                        // var amount = rn({min: settings.actions[actionName].maxloss, max: settings.actions[actionName].minloss, integer: true})
+                        
+                        bot.chat.send(message.channel, {body: `You got caught stealing from @${message.atMentionUsernames[0]}. He sued you for *$${Math.abs(amount)}*.`})
+
+                        core.createLedgerEntry(message.sender.username, -Math.abs(amount), `${actionName}-fail`)
                     }
             
-                    if (amount > 0) {
-                        bot.chat.send(message.channel, {body: `Oh no! @${message.sender.username} just robbed @${message.atMentionUsernames[0]} for *$${amount}*.`})
-                        core.createLedgerEntry(message.sender.username, amount, 'rob')
-                        core.createLedgerEntry(message.atMentionUsernames[0], -Math.abs(amount), 'robbed')
-                    } else {
-                        bot.chat.send(message.channel, {body: `You got caught stealing from @${message.atMentionUsernames[0]} and were fined $${Math.abs(amount)}.`})
-                        core.createLedgerEntry(message.sender.username, amount, 'fined')
-                    }
+                    // if (amount > 0) {
+                    //     bot.chat.send(message.channel, {body: `Oh no! @${message.sender.username} just robbed @${message.atMentionUsernames[0]} for *$${amount}*.`})
+                    //     core.createLedgerEntry(message.sender.username, amount, 'rob')
+                    //     core.createLedgerEntry(message.atMentionUsernames[0], -Math.abs(amount), 'robbed')
+                    // } else {
+                    //     bot.chat.send(message.channel, {body: `You got caught stealing from @${message.atMentionUsernames[0]} and were fined $${Math.abs(amount)}.`})
+                    //     core.createLedgerEntry(message.sender.username, amount, 'fined')
+                    // }
                 }
             })
         }

@@ -25,7 +25,7 @@ exports.run = (message, bot) => {
             bot.chat.send(message.channel, {body: `💔 @${message.sender.username} committed a crime and **lost $${Math.abs(reward)}**. \r\n > ${strings[actionName].fail[rn({min: 0, max: Object.keys(strings[actionName].win).length - 1, integer: true})]}`})
         }
 
-        core.createLedgerEntry(message.sender.username, reward, actionName)
+        core.createLedgerEntry(message.sender.username, reward, reward > 0 ? actionName : `${actionName}-fail`)
 
     })
 }

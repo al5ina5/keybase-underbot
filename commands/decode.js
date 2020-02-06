@@ -37,7 +37,7 @@ exports.run = (message, bot, args) => {
     reward = rn({min: settings.actions.decode.minwin, max: settings.actions.decode.maxwin, integer: true})
     core.createLedgerEntry(message.sender.username, reward, actionName, correctNumber)
 
-    bot.chat.send(message.channel, {body: `*Decoded successfully.* True skills. You get to keep *$${reward}*!`})
+    bot.chat.send(message.channel, {body: `*Decoded successfully.* @${message.sender.username} has l337 h4ck!ng skillz. You get to keep *$${reward}*!`})
     correctNumber = rn({min: 1, max: 10, integer: true})
     console.log(`Decode number: ${correctNumber}`)
 }

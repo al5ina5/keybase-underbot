@@ -11,7 +11,7 @@ var timeout
 var players = []
 var reward
 
-var timer = 30000
+var timer = 60000
 var playervalue = rn({min: 0.01, max: 0.2})
 
 exports.run = (message, bot) => {
@@ -22,7 +22,7 @@ exports.run = (message, bot) => {
 
         players.push(message.sender.username)
 
-        bot.chat.send(message.channel, {body: `*Heist* \r\n @${message.sender.username} has started a heist. Join the heist within ${timer / 1000} seconds to increase the win-rate and reep the rewards. Current win-rate: ${parseInt(winrate * 100)}%.`})
+        bot.chat.send(message.channel, {body: `*Heist* \r\n > @${message.sender.username} has started a heist. Join the heist within ${timer / 1000} seconds to increase the win-rate and reep the rewards. Current win-rate: ${parseInt(winrate * 100)}%.`})
 
         timeout = setTimeout(() => {
             var rand = Math.random()
@@ -52,7 +52,7 @@ exports.run = (message, bot) => {
         timeout.refresh()
         winrate += playervalue
         players.push(message.sender.username)
-        bot.chat.send(message.channel, {body: `@${message.sender.username} joined the heist. *Win-rate increased to ${parseInt(winrate * 100)}%. Timer reset to ${timer / 1000} seconds. Heisters: ${players.join(', ')}.`})
+        bot.chat.send(message.channel, {body: `@${message.sender.username} joined the heist. *Win-rate increased to ${parseInt(winrate * 100)}%.* Heisters: ${players.join(', ')}.`})
     }
 }
 

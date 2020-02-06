@@ -31,12 +31,12 @@ async function main() {
 
         if (!cmd.startsWith(settings.prefix)) return
 
-        if (message.channel.name != 'underforums' || message.channel.topicName != 'gameroom') {
-            bot.chat.send(message.channel, {
-                body: `*Hey @${message.sender.username}!* I only work in @underforums for now. Join @underforums#gameroom to play!`
-            })
-            return
-        }
+        // if (message.channel.name != 'underforums' || message.channel.topicName != 'gameroom') {
+        //     bot.chat.send(message.channel, {
+        //         body: `*Hey @${message.sender.username}!* I only work in @underforums for now. Join @underforums#gameroom to play!`
+        //     })
+        //     return
+        // }
 
         console.log(`${message.sender.username}: ${cmd}`)
         for (const command in core.commands) {

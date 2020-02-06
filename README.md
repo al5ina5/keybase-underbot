@@ -10,6 +10,7 @@ Please feel free to explore the source of this project freely for learning purpo
 The goal of the 'game' is to become the richest and most proflic member in the UNDERVERSE. Use a multitude of commands to generate and income or topple your oppenents. The quicket route to riches is your choice to decide: run the risks or keep a steady, honorable income. The bot promotes user activity in any server in an engaging and competitive way.
 
 # Commands
+- `+admin` - An admin-only command reserved for test purposes.
 - `+balance` - Check your balance.
 - `+commands` - Get a list of commands.
 - `+crime` - Commit a crime to gain some money.
@@ -20,6 +21,8 @@ The goal of the 'game' is to become the richest and most proflic member in the U
 - `+leaderboard` - View the leaderboard.
 - `+quest` - Go on quest. High rewards. High stakes.
 - `+rob` - Take money from your friends or foes.
+- `+test` - undefined
+- `+tip` - Tip the bot and you might just be rewarded!
 - `+work` - Do some honest work and gain some money.
 
 # Planned Features
