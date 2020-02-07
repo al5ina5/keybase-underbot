@@ -22,7 +22,7 @@ exports.run = (message, bot, args) => {
         
                     core.createLedgerEntry(message.sender.username, amount, 'fined')
                 } else {
-                    var percentage = rn({min: 0.01, max: 0.05})
+                    var percentage = rn({min: 0.04, max: 0.1})
                     var amount = parseInt(balance * percentage)
 
                     if (Math.random() < settings.actions[actionName].rate) {
@@ -39,6 +39,7 @@ exports.run = (message, bot, args) => {
                         bot.chat.send(message.channel, {body: `You got caught stealing from @${message.atMentionUsernames[0]}. He sued you for *$${Math.abs(amount)}*.`})
 
                         core.createLedgerEntry(message.sender.username, -Math.abs(amount), `${actionName}-fail`)
+                        core.createLedgerEntry(message.atMentionUsernames[0], amount, `sue`, `sued ${message.sender.username}`)
                     }
             
                     // if (amount > 0) {

@@ -5,52 +5,50 @@ const settings = require('./settings.json')
 
 var commands = {}
 
-function loadCommands() {
-    fs.readdir('./commands/', (err, files) => {
-        files.forEach(file => {
-            // console.log(`Loading ${file}...`)
-            var prop = require(`./commands/${file}`)
-            core.commands[file.split('.')[0]] = prop
-        })
+fs.readdir('./commands/', (err, files) => {
+    files.forEach(file => {
+        // console.log(`Loading ${file}...`)
+        var prop = require(`./commands/${file}`)
+        core.commands[file.split('.')[0]] = prop
     })
-}
+})
 
 async function main() {
-    console.log('Starting Keybase bot....')
     const bot = new Bot()
 
-    loadCommands()
-    await bot.init(settings.keybase.username, settings.keybase.paperkey)
-    console.log(`Connection with Keybase established as ${bot.myInfo().username}.`)
-    console.log(`Commands Loaded: ${Object.keys(core.commands).join(', ')}`)
+        console.log('Starting Keybase bot...')
 
-    const onMessage = message => {
+        await bot.init(settings.keybase.username, settings.keybase.paperkey).catch(err => console.log(err))
 
-        var cmd = message.content.text.body.toLowerCase().trim()
-        var args = cmd.split(' ')
+        console.log(`Connection with Keybase established as ${bot.myInfo().username}.`)
+        console.log(`Commands Loaded: ${Object.keys(core.commands).join(', ')}`)
 
-        if (!cmd.startsWith(settings.prefix)) return
+        const onMessage = message => {
+            try {
+                var cmd = message.content.text.body.toLowerCase().trim()
+                var args = cmd.split(' ')
 
-        // if (message.channel.name != 'underforums' || message.channel.topicName != 'gameroom') {
-        //     bot.chat.send(message.channel, {
-        //         body: `*Hey @${message.sender.username}!* I only work in @underforums for now. Join @underforums#gameroom to play!`
-        //     })
-        //     return
-        // }
+                if (!cmd.startsWith(settings.prefix)) return
 
-        console.log(`${message.sender.username}: ${cmd}`)
-        for (const command in core.commands) {
-            if (cmd.startsWith(settings.prefix + command) || cmd.startsWith(settings.prefix + core.commands[command].alias)) {
-                core.commands[command].run(message, bot, args)
+                if (message.channel.name != 'underforums' || message.channel.topicName != 'gameroom') {
+                    bot.chat.send(message.channel, {
+                        body: `*Hey @${message.sender.username}!* I only work in @underforums for now. Join @underforums#gameroom to play!`
+                    })
+                    return
+                }
+
+                console.log(`${message.sender.username}: ${cmd}`)
+                for (const command in core.commands) {
+                    if (cmd.startsWith(settings.prefix + command) || cmd.startsWith(settings.prefix + core.commands[command].alias)) {
+                        core.commands[command].run(message, bot, args)
+                    }
+                }
+            } catch (err) {
+                console.log(err)
             }
         }
-    }
 
-    bot.chat.watchAllChannelsForNewMessages(onMessage)
+        bot.chat.watchAllChannelsForNewMessages(onMessage).catch(err => console.log(err))
 }
 
-try {
-    main()
-} catch (error) {
-    console.log(error)
-}
+main()

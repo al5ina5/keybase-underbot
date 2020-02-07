@@ -12,6 +12,11 @@ exports.run = (message, bot) => {
         return
     }
 
+    if (message.content.text.payments[0].username != 'underverse') {
+        bot.chat.send(message.channel, {body: `*Uh...* did you mean to send that tip to me? :(`})
+        return
+    }
+
     if (message.content.text.payments[0].result.error) {
         bot.chat.send(message.channel, {body: `**Your payment failed. :(**\`\`\`${message.content.text.payments[0].result.error}\`\`\``})
         return

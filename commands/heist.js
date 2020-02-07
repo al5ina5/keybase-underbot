@@ -17,7 +17,7 @@ var playervalue = rn({min: 0.01, max: 0.2})
 exports.run = (message, bot) => {
     if (!inGame) {
         inGame = true
-        winrate = rn({min: 0.2, max: 0.4})
+        winrate = rn({min: 0.2, max: 0.3})
         players = []
 
         players.push(message.sender.username)
