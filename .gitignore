@@ -1,6 +1,4 @@
 # Custom
-.DS_Store
-settings.json
 
 # Logs
 logs
@@ -106,3 +104,5 @@ dist
 
 # TernJS port file
 .tern-port
+settings.json
+.DS_Store

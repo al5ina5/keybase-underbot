@@ -42,5 +42,5 @@ exports.run = (message, bot) => {
 }
 
 exports.help = 'Tip the bot and you might just be rewarded!'
-exports.usage = `${settings.prefix}buy +[amount]XLM@underverse, ${settings.prefix}buy +10XLM@underverse`
+exports.usage = `${settings.prefix}tip +[amount]XLM@underverse`
 exports.alias = 'buy'
